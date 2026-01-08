@@ -47,6 +47,9 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
               <div id="content">
                 {route && <Placeholder name="headless-main" rendering={route} />}
               </div>
+                 <div id="content">
+                {route && <Placeholder name="extra" rendering={route} />}
+              </div>
             </main>
             <footer>
               <div id="footer">
