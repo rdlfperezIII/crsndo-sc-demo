@@ -21,8 +21,7 @@ interface HeadlineContentProps extends HeadlineProps {
 const Headline = (props: HeadlineContentProps): React.JSX.Element => {
   return (
     <div className="Headline">
-       {/* Editable headline */}
-      <Text field={props.fields.Headline} tag="h1" />
+      {props.renderText(props.fields)}
     </div>
   );
 };
@@ -36,7 +35,7 @@ export const Default = (props: HeadlineContentProps): React.JSX.Element => {
     <>
     <div className="Headline">
        {/* Editable headline */}
-       Variant One
+      Default variant
       <Text field={fields.Headline} tag="h1" />
     </div>
     </>
@@ -50,7 +49,7 @@ export const AnotherVariant = (props: HeadlineContentProps): React.JSX.Element =
     <>
        <div className="Headline">
        {/* Editable headline */}
-       Variant Two
+       Another Variant
       <Text field={fields.Headline} tag="h1" />
     </div>
     </>
