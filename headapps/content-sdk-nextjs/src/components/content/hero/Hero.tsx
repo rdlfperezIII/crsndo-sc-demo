@@ -12,7 +12,7 @@ export const Default = (props: HeroProps): React.JSX.Element => {
   return (
     <div className={`component ${props.params.styles}`} id={id ? id : undefined}>
       <div className="component-content">
-        <p>Hero Component</p>
+        <p>Hero Component 123</p>
       </div>
     </div>
   );

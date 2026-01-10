@@ -12,7 +12,7 @@ import client from 'lib/sitecore-client';
 import Image from 'next/image';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import nextConfig from 'next.config';
-import { CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
+import { CdpHelper, useSitecore, Text } from '@sitecore-content-sdk/nextjs';
 import { useEffect } from 'react';
 import React from 'react';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
@@ -54,6 +54,7 @@ const importMap = [
     exports: [
       { name: 'CdpHelper', value: CdpHelper },
       { name: 'useSitecore', value: useSitecore },
+      { name: 'Text', value: Text },
     ]
   },
   {
