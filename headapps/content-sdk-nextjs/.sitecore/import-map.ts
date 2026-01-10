@@ -13,7 +13,7 @@ import Image from 'next/image';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import nextConfig from 'next.config';
 import { CdpHelper, useSitecore, Text } from '@sitecore-content-sdk/nextjs';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
@@ -61,6 +61,7 @@ const importMap = [
     module: 'react',
     exports: [
       { name: 'useEffect', value: useEffect },
+      { name: 'useState', value: useState },
       { name: 'default', value: React },
     ]
   },

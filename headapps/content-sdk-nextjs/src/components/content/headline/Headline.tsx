@@ -11,7 +11,7 @@ export const Default = (props: HeadlineProps): React.JSX.Element => {
   return (
     <div className="Headline">
        {/* Editable headline */}
-      <Text field={props.fields.Headline} tag="h2" />
+      <Text field={props.fields.Headline} tag="h1" />
     </div>
   );
 };
