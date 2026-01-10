@@ -80,7 +80,7 @@ export const Default = (props: TourListingProps): React.JSX.Element => {
       <div className={styles['jumbotron']}>
         <Text
           field={props.fields.TourListHeadline}
-          tag="h1"
+          tag="h2"
           className="display-4"
         />
     
