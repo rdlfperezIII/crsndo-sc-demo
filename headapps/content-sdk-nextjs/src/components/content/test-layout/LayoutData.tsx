@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import client from 'lib/sitecore-client'; // your SitecoreClient instance
 import { JSX } from 'react';
+import { useSitecore } from '@sitecore-content-sdk/nextjs';
 
 const LayoutDataTest = (): JSX.Element => {
+
+const pagePath = useSitecore().page.layout.sitecore.context.itemPath;
+console.log('Page data in LayoutDataTest:', pagePath);
   const [data, setData] = useState<any | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -12,7 +16,8 @@ const LayoutDataTest = (): JSX.Element => {
     // Fetch the page layout data using SitecoreClient
     const fetchData = async () => {
       try {
-        const result = await client.getPage('/', {
+      
+        const result = await client.getPage(pagePath, {
           site: 'demo-site', // replace with config.sitecoreSiteName if you have it
           locale: 'en',
         });
