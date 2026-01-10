@@ -7,18 +7,42 @@ import {
 } from '@sitecore-content-sdk/nextjs/codegen';
 // end of built-in imports
 
+import { useEffect, useState } from 'react';
+import React from 'react';
+import { AppPlaceholder, CdpHelper, useSitecore, Text } from '@sitecore-content-sdk/nextjs';
+import componentMap from '.sitecore/component-map';
 import Head from 'next/head';
 import client from 'lib/sitecore-client';
 import Image from 'next/image';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import nextConfig from 'next.config';
-import { CdpHelper, useSitecore, Text } from '@sitecore-content-sdk/nextjs';
-import { useEffect, useState } from 'react';
-import React from 'react';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
 
 const importMap = [
+  {
+    module: 'react',
+    exports: [
+      { name: 'useEffect', value: useEffect },
+      { name: 'useState', value: useState },
+      { name: 'default', value: React },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs',
+    exports: [
+      { name: 'AppPlaceholder', value: AppPlaceholder },
+      { name: 'CdpHelper', value: CdpHelper },
+      { name: 'useSitecore', value: useSitecore },
+      { name: 'Text', value: Text },
+    ]
+  },
+  {
+    module: '.sitecore/component-map',
+    exports: [
+      { name: 'default', value: componentMap },
+    ]
+  },
   {
     module: 'next/head',
     exports: [
@@ -47,22 +71,6 @@ const importMap = [
     module: 'next.config',
     exports: [
       { name: 'default', value: nextConfig },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/nextjs',
-    exports: [
-      { name: 'CdpHelper', value: CdpHelper },
-      { name: 'useSitecore', value: useSitecore },
-      { name: 'Text', value: Text },
-    ]
-  },
-  {
-    module: 'react',
-    exports: [
-      { name: 'useEffect', value: useEffect },
-      { name: 'useState', value: useState },
-      { name: 'default', value: React },
     ]
   },
   {

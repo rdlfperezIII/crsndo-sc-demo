@@ -6,6 +6,7 @@ import { Form } from '@sitecore-content-sdk/nextjs';
 // end of built-in components
 import * as PartialDesignDynamicPlaceholder from 'src/components/PartialDesignDynamicPlaceholder';
 import * as TourListing from 'src/components/content/tour-listing/TourListing';
+import * as LayoutData from 'src/components/content/test-layout/LayoutData';
 import * as Hero from 'src/components/content/hero/Hero';
 import * as Headline from 'src/components/content/headline/Headline';
 
@@ -15,6 +16,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Form', Form],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['TourListing', { ...TourListing }],
+  ['LayoutData', { ...LayoutData }],
   ['Hero', { ...Hero }],
   ['Headline', { ...Headline }],
 ]);
