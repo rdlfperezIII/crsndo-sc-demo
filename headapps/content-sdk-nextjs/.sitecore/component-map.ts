@@ -9,6 +9,7 @@ import * as TourListing from 'src/components/content/tour-listing/TourListing';
 import * as LayoutData from 'src/components/content/test-layout/LayoutData';
 import * as Hero from 'src/components/content/hero/Hero';
 import * as Headline from 'src/components/content/headline/Headline';
+import * as ContentBlock from 'src/components/content/content-block/ContentBlock';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCWrapper],
@@ -19,6 +20,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LayoutData', { ...LayoutData }],
   ['Hero', { ...Hero }],
   ['Headline', { ...Headline }],
+  ['ContentBlock', { ...ContentBlock }],
 ]);
 
 export default componentMap;
