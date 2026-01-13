@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Field, Text } from '@sitecore-content-sdk/nextjs';
 import styles from './TourList.module.css'; // import CSS module
+
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
 
 type TourListingProps = {
   fields: {
@@ -88,21 +95,26 @@ export const Default = (props: TourListingProps): React.JSX.Element => {
 
       {/* Cards */}
       <div className={styles['tour-list-cards']}>
-        {tours.map((tour, idx) => (
-          <div className={styles['card']} key={idx}>
-            {tour.imageSrc && (
-              <img
-                src={tour.imageSrc}
-                className={styles['card-img-top']}
-                alt={tour.name}
-              />
-            )}
-            <div className={styles['card-body']}>
-              <h5 className={styles['card-title']}>{tour.name}</h5>
-              <p className={styles['card-text']}>{tour.description}</p>
-            </div>
-          </div>
-        ))}
+        {tours.map((tour, idx) => {
+        const slug = slugify(tour.name);
+        return (
+          <Link key={idx} href={`/articles/${slug}`} legacyBehavior>
+            <a className={styles['card']}>
+              {tour.imageSrc && (
+                <img
+                  src={tour.imageSrc}
+                  className={styles['card-img-top']}
+                  alt={tour.name}
+                />
+              )}
+              <div className={styles['card-body']}>
+                <h5 className={styles['card-title']}>{tour.name}</h5>
+                <p className={styles['card-text']}>{tour.description}</p>
+              </div>
+            </a>
+          </Link>
+        );
+      })}
       </div>
     </div>
   );

@@ -22,11 +22,11 @@ export const Default = (props: ComponentProps): JSX.Element => {
 
   const id = props.params?.RenderingIdentifier;
   console.log('ContentIntro context:', page?.layout?.sitecore?.route);
-
+  
   const event = page?.layout?.sitecore?.route as BaseRouteData | undefined;
 
   const fields = event?.fields;
-  console.log('ContentIntro fields:', fields);
+console.log('ContentIntro fields:', fields);
   //handler
   if (!fields?.Title || !fields?.Intro) {
     return (
