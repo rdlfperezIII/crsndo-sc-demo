@@ -1,9 +1,24 @@
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --primary-color: #c8ff00;
+  --secondary-color: #0052a3;
+  --text-color: #747474;
+  --border-color: #cccccc;
+}
+
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #747474;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
 .container {
