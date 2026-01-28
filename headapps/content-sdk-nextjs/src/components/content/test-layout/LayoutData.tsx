@@ -12,13 +12,12 @@ console.log('Page data in LayoutDataTest:', pagePath);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    
-    // Fetch the page layout data using SitecoreClient
+    if (!pagePath) return; // skip if undefined
+
     const fetchData = async () => {
       try {
-      
         const result = await client.getPage(pagePath, {
-          site: 'demo-site', // replace with config.sitecoreSiteName if you have it
+          site: 'demo-site',
           locale: 'en',
         });
         setData(result);
@@ -30,7 +29,7 @@ console.log('Page data in LayoutDataTest:', pagePath);
     };
 
     fetchData();
-  }, []);
+  }, [pagePath]);
 
   if (loading) {
     return <div>Loading...</div>;

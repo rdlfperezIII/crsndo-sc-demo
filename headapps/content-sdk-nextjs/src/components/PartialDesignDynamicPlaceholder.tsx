@@ -8,6 +8,7 @@ import { ComponentProps } from 'lib/component-props';
 
 type DynamicPlaceholderProps = ComponentProps & {
   rendering: ComponentRendering;
+  page?: any;
 };
 
 const PartialDesignDynamicPlaceholder = (
@@ -16,7 +17,7 @@ const PartialDesignDynamicPlaceholder = (
   <AppPlaceholder
     name={props.rendering?.params?.sig || ''}
     rendering={props.rendering}
-    page={props.page}
+    page={props?.page}
     componentMap={componentMap}
   />
 );
