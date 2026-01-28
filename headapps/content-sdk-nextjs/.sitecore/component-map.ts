@@ -8,9 +8,11 @@ import * as PartialDesignDynamicPlaceholder from 'src/components/PartialDesignDy
 import * as TourListing from 'src/components/content/tour-listing/TourListing';
 import * as TourDetails from 'src/components/content/tour-details/TourDetails';
 import * as LayoutData from 'src/components/content/test-layout/LayoutData';
+import * as MultiCards from 'src/components/content/multicards/MultiCards';
 import * as Hero from 'src/components/content/hero/Hero';
 import * as Headline from 'src/components/content/headline/Headline';
 import * as Nav from 'src/components/content/header/Nav';
+import * as Footer from 'src/components/content/footer/Footer';
 import * as ContentBlock from 'src/components/content/content-block/ContentBlock';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
@@ -21,9 +23,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TourListing', { ...TourListing }],
   ['TourDetails', { ...TourDetails }],
   ['LayoutData', { ...LayoutData }],
+  ['MultiCards', { ...MultiCards }],
   ['Hero', { ...Hero }],
   ['Headline', { ...Headline }],
   ['Nav', { ...Nav }],
+  ['Footer', { ...Footer }],
   ['ContentBlock', { ...ContentBlock }],
 ]);
 

@@ -19,6 +19,8 @@ import nextConfig from 'next.config';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
 import Link from 'next/link';
+import { faFacebook, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const importMap = [
   {
@@ -93,7 +95,16 @@ const importMap = [
     exports: [
       { name: 'default', value: Link },
     ]
-  }
+  },
+  {
+    module: '@fortawesome/free-brands-svg-icons',
+    exports: [
+      { name: 'faFacebook', value: faFacebook },
+      { name: 'faInstagram', value: faInstagram },
+      { name: 'faLinkedinIn', value: faLinkedinIn },
+      { name: 'FontAwesomeIcon', value: FontAwesomeIcon },
+    ]
+  },
 ] as ImportEntry[];
 
 export default combineImportEntries(defaultImportEntries, importMap);

@@ -5,6 +5,14 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Heading';
+  src: url('/fonts/Heading.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --primary-color: #c8ff00;
   --secondary-color: #0052a3;
@@ -18,6 +26,7 @@ body {
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
   margin: 0;
 }
 
@@ -73,13 +82,6 @@ h2 {
 ul {
   padding: 0;
   list-style: none;
-}
-
-footer {
-  padding: 20px;
-  border-top: 1px solid #eef2f2;
-  font-size: 0.75rem;
-  color: #ababab;
 }
 
 .active {
